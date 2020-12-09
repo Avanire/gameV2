@@ -69,6 +69,16 @@ public abstract class Player extends Character implements Exp {
         exp -= 1000 * currentLvl;
     }
 
+    public void attack(Character character, int skillNumber) {
+        Skill skill = attackSkills.get(skillNumber);
+        doAction(character, skill);
+    }
+
+    public void buff(int skillNumber) {
+        Skill skill = buffSkills.get(skillNumber);
+        doAction(this, skill);
+    }
+
     protected void doAction(Character character, Skill skill) {
         int manaCost = skill.getManaCost();
         if (this.mp < manaCost) {

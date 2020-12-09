@@ -32,13 +32,5 @@ public class Mag extends Player {
         buffSkills.add(new ManaRegen());
     }
 
-    public void attack(Character character, int skillNumber) {
-        Skill skill = attackSkills.get(skillNumber);
-        super.doAction(character, skill);
-    }
 
-    public void buff(int skillNumber) {
-        Skill skill = buffSkills.get(skillNumber);
-        super.doAction(this, skill);
-    }
 }
